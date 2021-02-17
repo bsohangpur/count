@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {useState} from 'react';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App(){
+    let num=0;
+    let [cnum, setCnum]=useState(num);
+    
+    function Num(){
+//    console.log(cnum);
+    setCnum(cnum+1)};
+    function Num1(){
+        
+    // console.log(cnum)
+    setCnum(cnum=0)
+    }
+    
+    return(
+        <><div>
+        <div className="box">
+        <h1>{cnum}</h1>
+        <button onClick={Num}>Count</button>
+        <button onClick={Num1}>Clear</button>
+        </div>
+        </div>
+        </>
+    )
+}
+
+ReactDOM.render(<App/>,document.getElementById('root'));
